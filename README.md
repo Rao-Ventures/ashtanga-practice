@@ -1,2 +1,4 @@
 # ashtanga-practice
-ashtangapractice.com
+Marketing website for My Ashtanga Yoga Practice app
+
+https://ashtangapractice.com

@@ -1,14 +1,891 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ashtanga Practice</title>
-  </head>
-  <body>
-    <main>
-      <h1>Ashtanga Practice</h1>
-      <p>ashtangapractice.com</p>
-    </main>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Ashtanga Yoga Practice — Authentic Eight Limbs & Mobile App</title>
+  <meta name="description"
+    content="Discover the authentic Eight Limbs of Ashtanga Yoga from Patanjali's Yoga Sutras, and elevate your practice with My Ashtanga Yoga Practice mobile app on iOS and Android." />
+  <meta name="keywords"
+    content="Ashtanga Yoga, Eight Limbs, Yoga Sutras, Patanjali, Yama, Niyama, Asana, Pranayama, Pratyahara, Dharana, Dhyana, Samadhi, Yoga Chikitsa, Primary Series, Mysore Practice, Yoga App, Apple Health, Health Connect, Rao Ventures" />
+  <meta name="author" content="Rao Ventures LLC" />
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:title" content="My Ashtanga Yoga Practice — Authentic Eight Limbs & Mobile App" />
+  <meta property="og:description"
+    content="Explore the authentic eight-limbed path of Ashtanga Yoga from Patanjali's Yoga Sutras, and practice with our guided mobile app." />
+  <meta property="og:url" content="https://ashtangapractice.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/google-play-feature-graphic.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="My Ashtanga Yoga Practice — Authentic Eight Limbs & Mobile App" />
+  <meta name="twitter:description"
+    content="Explore the authentic eight-limbed path of Ashtanga Yoga and practice with our companion mobile app." />
+  <link rel="canonical" href="https://ashtangapractice.com" />
+
+  <!-- Typography: Google Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="preload" as="image" href="images/ashtanga-icon.webp" fetchpriority="high" type="image/webp" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/r_logo.png" />
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-brand" aria-label="My Ashtanga Yoga Practice Home">
+        <picture>
+          <source srcset="images/ashtanga-icon.webp" type="image/webp" />
+          <img src="images/ashtanga-icon.png" alt="My Ashtanga Practice icon" class="nav-logo-img" width="38"
+            height="38" />
+        </picture>
+        <span class="nav-brand-name">Ashtanga Practice</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#eight-limbs" class="nav-link">Eight Limbs</a></li>
+        <li><a href="#the-app" class="nav-link">The App</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#sequences" class="nav-link">Sequences</a></li>
+        <li><a href="#breath-guide" class="nav-link">Breath Guide</a></li>
+        <li><a href="#the-app" class="nav-cta" id="nav-download-btn">Get App</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
+        aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-menu" id="nav-mobile-menu" aria-hidden="true">
+      <a href="#eight-limbs" class="nav-mobile-link">Eight Limbs of Yoga</a>
+      <a href="#the-app" class="nav-mobile-link">The Mobile App</a>
+      <a href="#features" class="nav-mobile-link">App Features</a>
+      <a href="#sequences" class="nav-mobile-link">Practice Sequences</a>
+      <a href="#breath-guide" class="nav-mobile-link">Breath Visualizer</a>
+      <a href="https://raoventures.co" class="nav-mobile-link" target="_blank" rel="noopener noreferrer">Rao
+        Ventures</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge reveal" aria-label="Authentic Tradition">
+        <span class="hero-badge-dot"></span>
+        Authentic Tradition &amp; Modern Companion
+      </div>
+      <h1 id="hero-title" class="hero-title reveal reveal-delay-1">
+        The Sacred Eight Limbs &amp;<br />
+        <em class="hero-title-accent">Ashtanga Yoga Practice</em>
+      </h1>
+      <p class="hero-subtitle reveal reveal-delay-2">
+        Rooted in Sage Patañjali’s classical <em>Yoga Sutras</em>, Ashtanga Yoga unites timeless spiritual wisdom
+        with dynamic moving meditation. Explore the authentic eight-limbed journey and elevate your daily practice with
+        our dedicated mobile companion.
+      </p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="#eight-limbs" class="btn btn-primary" id="hero-limbs-btn">
+          <span>Explore The Eight Limbs</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+        <a href="#the-app" class="btn btn-ghost" id="hero-app-btn">
+          <span>Explore The Mobile App</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══════════════════════════════════════════════════════════════
+         SECTION 1: THE AUTHENTIC EIGHT LIMBS OF ASHTANGA YOGA
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="section-pad" id="eight-limbs" aria-labelledby="eight-limbs-title">
+      <div class="container">
+
+        <div class="section-label reveal">Sacred Classical Philosophy</div>
+        <h2 id="eight-limbs-title" class="section-title reveal reveal-delay-1">
+          The Authentic Eight Limbs of <em>Ashtanga Yoga</em>
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          Codified by Sage Patañjali in the classical <em>Yoga Sutras</em>, Ashtanga (literally <em>ashta</em> = eight,
+          <em>anga</em> = limbs) is a holistic, progressive path of spiritual awakening, ethical living, and mental
+          stillness.
+        </p>
+
+        <!-- Yoga Sutra 2.29 Callout Banner -->
+        <article class="sutra-banner reveal reveal-delay-2" aria-label="Patañjali Yoga Sutra 2.29">
+          <div class="sutra-sanskrit">
+            यमनियमासनप्राणायामप्रत्याहारधारणाध्यानसमाधयोऽष्टावङ्गानि ॥ २.२९ ॥
+          </div>
+          <div class="sutra-translit">
+            yama-niyama-āsana-prāṇāyāma-pratyāhāra-dhāraṇā-dhyāna-samādhayo ’ṣṭāv aṅgāni
+          </div>
+          <div class="sutra-english">
+            "The eight limbs of yoga are: moral restraints (Yama), internal observances (Niyama), physical postures
+            (Asana),
+            breath control (Pranayama), sensory withdrawal (Pratyahara), concentration (Dharana), meditation (Dhyana),
+            and meditative absorption (Samadhi)."
+          </div>
+          <span class="sutra-ref">Patañjali’s Yoga Sutras • Sadhana Pada 2.29</span>
+        </article>
+
+        <!-- Narrative: The True Purpose of Ashtanga Yoga -->
+        <div style="max-width: 820px; margin: 0 auto 48px;" class="reveal reveal-delay-3">
+          <p class="product-detail-desc" style="font-size: 1.05rem; line-height: 1.85;">
+            In traditional wisdom, the eight limbs do not form a mere checklist of physical exercises, but an integrated
+            living tree. The practice begins with universal ethics and self-discipline (<em>Bahiranga</em>, outer
+            sadhana)
+            and culminates in meditative realization and transcendent bliss (<em>Antaranga</em>, inner sadhana).
+          </p>
+          <p class="product-detail-desc" style="font-size: 1.05rem; line-height: 1.85;">
+            The physical posture sequence (<em>Asana</em>, the 3rd limb) and synchronized breath (<em>Pranayama</em>,
+            the 4th limb)
+            act as the vital practical doorway. By building internal heat (<em>tapas</em>), detoxifying the physical
+            organs
+            and energy pathways (<em>nadis</em>), and anchoring awareness through the <strong>Tristana method</strong>
+            (Breath, Bandhas,
+            and Drishti), the turbulent mind is brought to natural stillness: <em>“yogaś citta-vṛtti-nirodhaḥ”</em>.
+          </p>
+        </div>
+
+        <!-- The 8 Limbs Cards Grid -->
+        <div class="limbs-grid">
+
+          <!-- Limb 1: Yama -->
+          <article class="limb-card reveal" id="limb-1" aria-labelledby="limb-1-title">
+            <div class="limb-header">
+              <span class="limb-num-badge">Limb 01</span>
+              <span class="limb-icon" aria-hidden="true">⚖️</span>
+            </div>
+            <div class="limb-devanagari">यम</div>
+            <h3 class="limb-title" id="limb-1-title">Yama</h3>
+            <div class="limb-subtitle">Universal Ethical Disciplines</div>
+            <p class="limb-desc">
+              The foundational moral guidelines governing our relationship with society, all living creatures, and the
+              world.
+              Yamas establish the inner tranquility and clear conscience essential for contemplative practice.
+            </p>
+            <div class="limb-subitems">
+              <strong>The 5 Restraints:</strong>
+              • <em>Ahimsa</em> (Non-violence &amp; compassion)<br />
+              • <em>Satya</em> (Truthfulness &amp; integrity)<br />
+              • <em>Asteya</em> (Non-stealing)<br />
+              • <em>Brahmacharya</em> (Energy moderation)<br />
+              • <em>Aparigraha</em> (Non-possessiveness &amp; simplicity)
+            </div>
+          </article>
+
+          <!-- Limb 2: Niyama -->
+          <article class="limb-card reveal reveal-delay-1" id="limb-2" aria-labelledby="limb-2-title">
+            <div class="limb-header">
+              <span class="limb-num-badge">Limb 02</span>
+              <span class="limb-icon" aria-hidden="true">🌿</span>
+            </div>
+            <div class="limb-devanagari">नियम</div>
+            <h3 class="limb-title" id="limb-2-title">Niyama</h3>
+            <div class="limb-subtitle">Personal Self-Purification</div>
+            <p class="limb-desc">
+              Internal observances and self-disciplines that purify personal habits, emotional balance, and devotion.
+              They nurture
+              the fertile inner soil required for spiritual growth.
+            </p>
+            <div class="limb-subitems">
+              <strong>The 5 Observances:</strong>
+              • <em>Saucha</em> (Purity of body, diet &amp; mind)<br />
+              • <em>Santosha</em> (Contentment with what is)<br />
+              • <em>Tapas</em> (Disciplined spiritual heat)<br />
+              • <em>Svadhyaya</em> (Self-study &amp; scriptures)<br />
+              • <em>Ishvara Pranidhana</em> (Surrender to higher wisdom)
+            </div>
+          </article>
+
+          <!-- Limb 3: Asana -->
+          <article class="limb-card reveal reveal-delay-2" id="limb-3" aria-labelledby="limb-3-title">
+            <div class="limb-header">
+              <span class="limb-num-badge">Limb 03</span>
+              <span class="limb-icon" aria-hidden="true">🧘</span>
+            </div>
+            <div class="limb-devanagari">आसन</div>
+            <h3 class="limb-title" id="limb-3-title">Asana</h3>
+            <div class="limb-subtitle">Posture &amp; Steady Seat</div>
+            <p class="limb-desc">
+              Defined in Yoga Sutra 2.46 as <em>“Sthira Sukham Asanam”</em> — posture must be both steady and joyful. In
+              Ashtanga
+              Yoga, progressive physical series (<em>Yoga Chikitsa</em>) detoxify tissues, strengthen muscles, and align
+              the spine so the body can sit without restlessness.
+            </p>
+            <div class="limb-subitems">
+              <strong>Ashtanga Embodiment:</strong>
+              Dynamic breath-synchronized vinyasas cleanse internal organs, build endurance, balance nervous systems,
+              and cultivate lightness (<em>laghu</em>).
+            </div>
+          </article>
+
+          <!-- Limb 4: Pranayama -->
+          <article class="limb-card reveal reveal-delay-3" id="limb-4" aria-labelledby="limb-4-title">
+            <div class="limb-header">
+              <span class="limb-num-badge">Limb 04</span>
+              <span class="limb-icon" aria-hidden="true">💨</span>
+            </div>
+            <div class="limb-devanagari">प्राणायाम</div>
+            <h3 class="limb-title" id="limb-4-title">Pranayama</h3>
+            <div class="limb-subtitle">Breath &amp; Life Force Expansion</div>
+            <p class="limb-desc">
+              Conscious mastery and expansion of <em>prana</em> (vital life energy). Regulating inhalation
+              (<em>puraka</em>),
+              exhalation (<em>rechaka</em>), and breath retention (<em>kumbhaka</em>) harmonizes mental fluctuations and
+              vital organs.
+            </p>
+            <div class="limb-subitems">
+              <strong>Ujjayi Breathing:</strong>
+              In Ashtanga, deep diaphragmatic Ujjayi (Victorious Ocean Breath) maintains steady rhythmic pacing
+              (<em>Sama Vritti</em>) and stokes the internal fire (<em>agni</em>).
+            </div>
+          </article>
+
+          <!-- Limb 5: Pratyahara -->
+          <article class="limb-card reveal" id="limb-5" aria-labelledby="limb-5-title">
+            <div class="limb-header">
+              <span class="limb-num-badge">Limb 05</span>
+              <span class="limb-icon" aria-hidden="true">👁️</span>
+            </div>
+            <div class="limb-devanagari">प्रत्याहार</div>
+            <h3 class="limb-title" id="limb-5-title">Pratyahara</h3>
+            <div class="limb-subtitle">Sense Withdrawal &amp; Inward Turning</div>
+            <p class="limb-desc">
+              Retracting the outward-seeking senses from external stimuli, just as a tortoise withdraws its limbs into
+              its shell.
+              The mind ceases reacting to external sights and sounds and redirects its gaze inward.
+            </p>
+            <div class="limb-subitems">
+              <strong>Ashtanga Embodiment:</strong>
+              Practiced continuously on the mat by anchoring the eyes to specific gaze points (<em>Drishti</em>) and
+              tuning to the internal sound of the ocean breath.
+            </div>
+          </article>
+
+          <!-- Limb 6: Dharana -->
+          <article class="limb-card reveal reveal-delay-1" id="limb-6" aria-labelledby="limb-6-title">
+            <div class="limb-header">
+              <span class="limb-num-badge">Limb 06</span>
+              <span class="limb-icon" aria-hidden="true">🎯</span>
+            </div>
+            <div class="limb-devanagari">धारणा</div>
+            <h3 class="limb-title" id="limb-6-title">Dharana</h3>
+            <div class="limb-subtitle">One-Pointed Concentration</div>
+            <p class="limb-desc">
+              Binding the attention of the mind to a single point, center, or object without wavering (<em>desha-bandhas
+                cittasya dharana</em>).
+              It trains consciousness into unwavering stability.
+            </p>
+            <div class="limb-subitems">
+              <strong>Ashtanga Embodiment:</strong>
+              Maintained by counting exact Sanskrit vinyasa numbers (<em>Ekam, Dve, Trīṇi...</em>), breath holds, and
+              internal locks (<em>Bandhas</em>).
+            </div>
+          </article>
+
+          <!-- Limb 7: Dhyana -->
+          <article class="limb-card reveal reveal-delay-2" id="limb-7" aria-labelledby="limb-7-title">
+            <div class="limb-header">
+              <span class="limb-num-badge">Limb 07</span>
+              <span class="limb-icon" aria-hidden="true">🪷</span>
+            </div>
+            <div class="limb-devanagari">ध्यान</div>
+            <h3 class="limb-title" id="limb-7-title">Dhyana</h3>
+            <div class="limb-subtitle">Meditation &amp; Continuous Awareness</div>
+            <p class="limb-desc">
+              The continuous, unbroken stream of contemplative awareness toward the object of meditation, uninterrupted
+              like oil
+              flowing from one vessel to another.
+            </p>
+            <div class="limb-subitems">
+              <strong>Ashtanga Embodiment:</strong>
+              When movement, breath, and gaze unite seamlessly, the entire practice transforms into an effortless,
+              ecstatic moving meditation.
+            </div>
+          </article>
+
+          <!-- Limb 8: Samadhi -->
+          <article class="limb-card reveal reveal-delay-3" id="limb-8" aria-labelledby="limb-8-title">
+            <div class="limb-header">
+              <span class="limb-num-badge">Limb 08</span>
+              <span class="limb-icon" aria-hidden="true">☀️</span>
+            </div>
+            <div class="limb-devanagari">समाधि</div>
+            <h3 class="limb-title" id="limb-8-title">Samadhi</h3>
+            <div class="limb-subtitle">Absorption &amp; Spiritual Union</div>
+            <p class="limb-desc">
+              The ultimate culmination of yoga: pure superconscious absorption. The illusory separation between the
+              practitioner,
+              the act of meditation, and the Divine dissolves into supreme peace, clarity, and oneness.
+            </p>
+            <div class="limb-subitems">
+              <strong>The State of Yoga:</strong>
+              Resting effortlessly in the pristine stillness of the true Self (<em>Purusha</em>), liberated from mental
+              restlessness and suffering.
+            </div>
+          </article>
+
+        </div>
+
+        <!-- The Tristana Method Callout: The Bridge of Ashtanga -->
+        <div class="tristana-wrapper reveal" id="tristana-method" aria-labelledby="tristana-title">
+          <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+            <div class="section-label">The Ashtanga Bridge</div>
+            <h3 id="tristana-title"
+              style="font-family: var(--font-sans); font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 600; color: var(--text); margin-bottom: 12px;">
+              The Tristana Method: Uniting Body, Breath &amp; Mind
+            </h3>
+            <p style="font-size: 0.95rem; color: var(--text-sec); line-height: 1.7;">
+              How does physical movement become spiritual transformation? In Ashtanga Yoga, the
+              <strong>Tristana</strong> method
+              simultaneously binds three sacred focal points throughout every posture, linking the outer limbs directly
+              to inner meditation:
+            </p>
+          </div>
+
+          <div class="tristana-grid">
+            <div class="tristana-card">
+              <div class="tristana-card-icon" aria-hidden="true">🌊</div>
+              <h4 class="tristana-card-title">1. Ujjayi Pranayama (Breath)</h4>
+              <p class="tristana-card-desc">
+                Smooth, diaphragmatic breathing with gentle throat constriction creates a resonant ocean sound.
+                Equalizes inhalation
+                and exhalation, detoxifies cells, and anchors present-moment awareness.
+              </p>
+            </div>
+            <div class="tristana-card">
+              <div class="tristana-card-icon" aria-hidden="true">🔒</div>
+              <h4 class="tristana-card-title">2. Bandhas (Energy Locks)</h4>
+              <p class="tristana-card-desc">
+                Internal energetic seals—<em>Mula Bandha</em> (pelvic root lock) and <em>Uddiyana Bandha</em> (lower
+                abdominal lock)—channel
+                prana upward through the spine, producing physical lightness and core stability.
+              </p>
+            </div>
+            <div class="tristana-card">
+              <div class="tristana-card-icon" aria-hidden="true">🎯</div>
+              <h4 class="tristana-card-title">3. Drishti (Focal Gaze)</h4>
+              <p class="tristana-card-desc">
+                Designated gazing points (nose tip, third eye, navel, hands, toes, sky) steady the optic nerve. By
+                directing the eyes,
+                the mind stops wandering and turns effortlessly inward (<em>Pratyahara</em>).
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SECTION 2: MY ASHTANGA YOGA PRACTICE APP
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="product-detail section-pad" id="the-app" aria-labelledby="ashtanga-title"
+      style="background: var(--surface-warm); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+
+        <div class="product-detail-grid product-detail-grid-reverse">
+
+          <!-- Left Visual Column (Icon, Graphic & Badges) -->
+          <div class="product-detail-visual reveal">
+            <div class="product-screenshot-wrapper product-screenshot-ashtanga">
+              <div class="product-screenshot-glow product-screenshot-glow-ashtanga"></div>
+              <picture>
+                <source srcset="images/ashtanga-icon.webp" type="image/webp" />
+                <img src="images/ashtanga-icon.png" alt="My Ashtanga Practice mobile app icon featuring modern yoga art"
+                  class="product-screenshot" width="512" height="512" loading="eager" fetchpriority="high"
+                  style="max-width: 320px; aspect-ratio: 1/1;" />
+              </picture>
+              <div class="product-visual-badge product-visual-badge-live">
+                <span class="product-tag-live-dot"></span> Now on iOS &amp; Android
+              </div>
+            </div>
+
+            <!-- Download Badges for Hero/Showcase -->
+            <div
+              style="display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 28px; width: 100%;">
+              <div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; align-items: center;">
+                <a href="https://apps.apple.com/us/app/my-ashtanga-yoga-practice/id6794335298" class="app-store-badge"
+                  id="ashtanga-appstore-btn" target="_blank" rel="noopener noreferrer"
+                  aria-label="Download My Ashtanga Yoga Practice on the App Store">
+                  <img src="images/app-store-badge.svg" alt="Download on the App Store" width="130" height="42" />
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.ashtangapractice.app"
+                  class="play-store-badge" id="ashtanga-playstore-btn" target="_blank" rel="noopener noreferrer"
+                  aria-label="Get My Ashtanga Yoga Practice on Google Play">
+                  <img src="images/google-play-badge.svg" alt="Get it on Google Play" width="180" height="42"
+                    style="height: 42px; width: auto;" />
+                </a>
+              </div>
+              <div style="display: flex; gap: 16px; font-size: 0.8rem; color: var(--text-tert); font-weight: 500;">
+                <span>✓ 100% Offline Capable</span>
+                <span>•</span>
+                <span>✓ Privacy-First</span>
+                <span>•</span>
+                <span>✓ No Ads</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content Column (as in raoventures.co) -->
+          <div class="product-detail-content">
+            <div class="section-label reveal">Traditional Ashtanga Yoga &amp; Technology</div>
+            <h2 id="ashtanga-title" class="product-detail-title reveal reveal-delay-1">My Ashtanga Yoga Practice</h2>
+            <p class="product-detail-tagline reveal reveal-delay-1">
+              Authentic Sanskrit Audio &amp; Guided Ashtanga Yoga Primary Series
+            </p>
+            <p class="product-detail-desc reveal reveal-delay-2">
+              <strong>My Ashtanga Yoga Practice</strong> is an interactive mobile application crafted for practitioners
+              learning and mastering the traditional Ashtanga Yoga Primary Series (<em>Yoga Chikitsa</em>).
+            </p>
+            <p class="product-detail-desc reveal reveal-delay-2">
+              Deepen your Ashtanga Yoga self-practice with immersive audio-guided sequences, customizable breath pacing
+              tailored to your natural rhythm, and authentic opening and closing chants. It's designed to adapt to your
+              practice level whether you're a beginner or an experienced practitioner.
+            </p>
+
+            <!-- Key Features List (as in raoventures.co) -->
+            <div class="product-detail-features reveal reveal-delay-3" id="features">
+              <h3 class="product-detail-features-title">Key Features</h3>
+              <ul class="product-features-list" aria-label="My Ashtanga Practice features">
+                <li class="product-features-item">
+                  <div class="pfi-icon pfi-icon-ashtanga" aria-hidden="true">🧘</div>
+                  <div class="pfi-content">
+                    <strong class="pfi-title">Primary &amp; Custom Sequences</strong>
+                    <p class="pfi-text">Practice Sun Salutations, Quarter Primary, Half Primary, Full Primary, or
+                      Finishing series with audio guidance</p>
+                  </div>
+                </li>
+                <li class="product-features-item">
+                  <div class="pfi-icon pfi-icon-ashtanga" aria-hidden="true">🕉️</div>
+                  <div class="pfi-content">
+                    <strong class="pfi-title">Sanskrit Asana Library</strong>
+                    <p class="pfi-text">Searchable asana library with detailed instructions,
+                      drishti, and Sanskrit name and audio pronunciations</p>
+                  </div>
+                </li>
+                <li class="product-features-item">
+                  <div class="pfi-icon pfi-icon-ashtanga" aria-hidden="true">🎶</div>
+                  <div class="pfi-content">
+                    <strong class="pfi-title">Opening &amp; Closing Chants</strong>
+                    <p class="pfi-text">Audio chanting with Sanskrit text, transliteration, and English translation</p>
+                  </div>
+                </li>
+                <li class="product-features-item">
+                  <div class="pfi-icon pfi-icon-ashtanga" aria-hidden="true">⏱️</div>
+                  <div class="pfi-content">
+                    <strong class="pfi-title">5-Breath Cycle &amp; Custom Pacing</strong>
+                    <p class="pfi-text">Interactive breath ring visualizer with customizable breath pacing</p>
+                  </div>
+                </li>
+                <li class="product-features-item">
+                  <div class="pfi-icon pfi-icon-ashtanga" aria-hidden="true">💓</div>
+                  <div class="pfi-content">
+                    <strong class="pfi-title">Apple Health &amp; Google Health Connect</strong>
+                    <p class="pfi-text">Sync and track your Ashtanga Yoga practice with Apple Health on iOS and Google
+                      Health Connect on Android</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Action Buttons and Legal Links -->
+            <div class="product-detail-cta reveal reveal-delay-3"
+              style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+              <a href="https://apps.apple.com/us/app/my-ashtanga-yoga-practice/id6794335298" class="app-store-badge"
+                id="ashtanga-cta-appstore" target="_blank" rel="noopener noreferrer"
+                aria-label="Download My Ashtanga Yoga Practice on the App Store">
+                <img src="images/app-store-badge.svg" alt="Download on the App Store" width="120" height="40" />
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.ashtangapractice.app" class="play-store-badge"
+                id="ashtanga-cta-playstore" target="_blank" rel="noopener noreferrer"
+                aria-label="Get My Ashtanga Yoga Practice on Google Play">
+                <img src="images/google-play-badge.svg" alt="Get it on Google Play" width="160" height="40"
+                  style="height: 40px; width: auto;" />
+              </a>
+              <div>
+                <a href="ashtanga-privacy.html" class="btn btn-ghost" style="font-size: 0.85rem; padding: 10px 18px;"
+                  id="ashtanga-privacy-link">
+                  <span>Privacy Policy</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                    style="width: 14px; height: 14px;">
+                    <path fill-rule="evenodd"
+                      d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </a>
+                <a href="ashtanga-eula.html" class="btn btn-ghost" style="font-size: 0.85rem; padding: 10px 18px;"
+                  id="ashtanga-eula-link">
+                  <span>View EULA</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                    style="width: 14px; height: 14px;">
+                    <path fill-rule="evenodd"
+                      d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         INTERACTIVE PRACTICE SEQUENCES
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="section-pad" id="sequences" aria-labelledby="sequences-title">
+      <div class="container">
+        <div class="section-label reveal">Tailored For Your Daily Practice</div>
+        <h2 id="sequences-title" class="section-title reveal reveal-delay-1">
+          5 Curated <em>Practice Sequences</em>
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          From quick morning energizers to the full traditional Yoga Chikitsa, choose the practice that fits your
+          schedule,
+          energy level, and experience.
+        </p>
+
+        <div class="sequences-grid">
+
+          <!-- Sequence 1 -->
+          <article class="sequence-card reveal">
+            <span class="sequence-duration">~10–20 min</span>
+            <h3 class="sequence-title">☀️ Sun Salutations Only</h3>
+            <p class="sequence-desc">
+              Surya Namaskara A (×5) and Surya Namaskara B (×5). Establishes consistent Ujjayi breathing, awakens major
+              joints,
+              and generates internal heating. Perfect for busy mornings or travel.
+            </p>
+            <div class="sequence-tag">Level: All Practitioners • Energy: Rejuvenating</div>
+          </article>
+
+          <!-- Sequence 2 -->
+          <article class="sequence-card reveal reveal-delay-1">
+            <span class="sequence-duration">~20–30 min</span>
+            <h3 class="sequence-title">🌸 Finishing Sequence Only</h3>
+            <p class="sequence-desc">
+              Backbends, shoulderstands, headstands, mudras, seated meditation, and final Savasana. Balances endocrine
+              systems
+              and calms the nervous system.
+            </p>
+            <div class="sequence-tag">Level: Restorative • Energy: Calming &amp; Grounding</div>
+          </article>
+
+          <!-- Sequence 3 -->
+          <article class="sequence-card reveal reveal-delay-2">
+            <span class="sequence-duration">~45–60 min</span>
+            <h3 class="sequence-title">🌿 Quarter Primary Series</h3>
+            <p class="sequence-desc">
+              Sun Salutations A &amp; B, the complete standing posture sequence for strength and balance, moving
+              directly into the restorative finishing sequence.
+            </p>
+            <div class="sequence-tag">Level: Intermediate • Focus: Standing Strength &amp; Alignment</div>
+          </article>
+
+          <!-- Sequence 4 -->
+          <article class="sequence-card reveal reveal-delay-3">
+            <span class="sequence-duration">~75–80 min</span>
+            <h3 class="sequence-title">🌊 Half Primary Series</h3>
+            <p class="sequence-desc">
+              Sun Salutations, standing poses, and seated postures up to Navasana (Boat Pose), followed by finishing.
+              The classic
+              stepping stone to developing core power and hip mobility.
+            </p>
+            <div class="sequence-tag">Level: Intermediate to Advanced • Focus: Deep Forward Folds</div>
+          </article>
+
+          <!-- Sequence 5 -->
+          <article class="sequence-card reveal"
+            style="grid-column: 1 / -1; background: linear-gradient(135deg, #FFFDF8 0%, #FEF8EC 100%); border-color: rgba(217, 119, 6, 0.3);">
+            <div
+              style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px;">
+              <div>
+                <span class="sequence-duration" style="background: var(--amber); color: #fff;">~90–120 min</span>
+                <h3 class="sequence-title" style="font-size: 1.5rem; margin-top: 6px;">🧘 Full Primary Series — Yoga
+                  Chikitsa</h3>
+                <p class="sequence-desc" style="max-width: 780px;">
+                  The complete traditional sequence: Surya Namaskara A &amp; B, full Standing sequence, all Seated
+                  postures (through Setu Bandhasana),
+                  complete Finishing inversions, and restful Savasana. <em>Yoga Chikitsa</em> ("Yoga Therapy") realigns
+                  the spine, cleanses internal organs,
+                  and transforms physical and mental stamina.
+                </p>
+              </div>
+              <a href="#the-app" class="btn btn-primary" style="align-self: center;">
+                <span>Practice in the App</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         INTERACTIVE 5-BREATH CYCLE VISUALIZER
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="section-pad" id="breath-guide" aria-labelledby="breath-guide-title"
+      style="background: var(--cream-dark);">
+      <div class="container">
+        <div class="section-label reveal">Experience The Breath Engine</div>
+        <h2 id="breath-guide-title" class="section-title reveal reveal-delay-1">
+          Interactive <em>5-Breath Cycle</em> Visualizer
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          In Ashtanga Yoga, traditional postures are held for 5 complete breath cycles. Try the app's signature
+          customizable
+          breath visualizer below to experience rhythmic <em>Sama Vritti</em> breathing.
+        </p>
+
+        <!-- Live Interactive Visualizer Widget -->
+        <div class="breath-widget reveal reveal-delay-3" role="region" aria-label="Interactive breath pacing widget">
+
+          <div class="breath-circle-container">
+            <div class="breath-ring-outer" aria-hidden="true"></div>
+            <div class="breath-circle" id="breath-circle" aria-live="polite">
+              <span class="breath-phase-text" id="breath-phase-text">Inhale</span>
+              <span class="breath-count-text" id="breath-count-text">Ekam (एकम्) • Breath 1 of 5</span>
+            </div>
+          </div>
+
+          <div class="breath-widget-info">
+            <h3 style="font-family: var(--font-sans); font-size: 1.4rem; font-weight: 600; color: var(--text);">
+              Customizable Breath Pacing (BPM)
+            </h3>
+            <p style="font-size: 0.92rem; color: var(--text-sec); line-height: 1.65;">
+              Select your natural breath cadence. Standard default is <strong>9 Breaths Per Minute</strong> (~6.7
+              seconds per cycle).
+              Experienced practitioners can select slower rhythms (5–7 BPM) to develop deeper lung capacity and
+              stillness, while active
+              practitioners may choose faster cadences.
+            </p>
+
+            <div>
+              <span
+                style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tert);">
+                Select Cadence:
+              </span>
+              <div class="breath-bpm-selector" role="group" aria-label="Breaths per minute options">
+                <button type="button" class="bpm-btn" data-bpm="6" aria-label="6 breaths per minute">6 BPM
+                  (Deep)</button>
+                <button type="button" class="bpm-btn active" data-bpm="9" aria-label="9 breaths per minute (Default)">9
+                  BPM (Traditional)</button>
+                <button type="button" class="bpm-btn" data-bpm="12" aria-label="12 breaths per minute">12 BPM
+                  (Brisk)</button>
+              </div>
+            </div>
+
+            <button type="button" class="btn-breath-toggle" id="breath-toggle-btn" aria-label="Toggle breath animation">
+              <span>⏸ Pause Breath</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Chants Preview Section -->
+        <div class="chants-card reveal" id="chants-preview">
+          <div class="section-label">Sacred Sound Currents</div>
+          <h3
+            style="font-family: var(--font-sans); font-size: 1.4rem; font-weight: 600; color: var(--text); margin-bottom: 12px;">
+            Synchronized Opening &amp; Closing Chants
+          </h3>
+          <p style="font-size: 0.92rem; color: var(--text-sec); line-height: 1.6; margin-bottom: 20px;">
+            The mobile app features line-by-line karaoke-style audio synchronized with original Sanskrit Devanagari
+            script,
+            IAST transliteration, and English translations.
+          </p>
+
+          <div class="chant-tabs" role="tablist">
+            <button type="button" class="chant-tab-btn active" data-target="chant-opening" role="tab"
+              aria-selected="true">
+              Opening Chant (Vande Gurūṇām)
+            </button>
+            <button type="button" class="chant-tab-btn" data-target="chant-closing" role="tab" aria-selected="false">
+              Closing Chant (Mangala Mantra)
+            </button>
+          </div>
+
+          <!-- Opening Chant Tab -->
+          <div class="chant-pane active" id="chant-opening" role="tabpanel">
+            <div class="chant-verse-devanagari">
+              वन्दे गुरूणां चरणारविन्दे संदर्शितस्वात्मसुखावबोधे ।
+              निःश्रेयसे जाङ्गलिकायमाने संसारहालाहलमोहशान्त्यै ॥
+            </div>
+            <div class="chant-verse-translit">
+              vande gurūṇāṁ caraṇāravinde saṁdarśita-svātma-sukhāvabodhe |
+              niḥ-śreyase jāṅgalikāyamāne saṁsāra-hālāhala-moha-śāntyai ||
+            </div>
+            <div class="chant-verse-english">
+              "I bow to the lotus feet of the gurus, who awaken insight into the happiness of pure self-knowledge,
+              acting as the jungle physician to pacify the delusion and poison of worldly existence."
+            </div>
+          </div>
+
+          <!-- Closing Chant Tab -->
+          <div class="chant-pane" id="chant-closing" role="tabpanel">
+            <div class="chant-verse-devanagari">
+              स्वस्तिप्रजाभ्यः परिपालयन्तां न्यायेन मार्गेण महीं महीशाः ।
+              गोब्राह्मणेभ्यः शुभमस्तु नित्यं लोकाः समस्ताः सुखिनो भवन्तु ॥
+            </div>
+            <div class="chant-verse-translit">
+              svasti-prajābhyaḥ paripālayantāṁ nyāyena mārgeṇa mahīṁ mahīśāḥ |
+              go-brāhmaṇebhyaḥ śubham-astu nityaṁ lokāḥ samastāḥ sukhino bhavantu ||
+            </div>
+            <div class="chant-verse-english">
+              "May all beings be well and protected. May rulers lead with justice along the righteous path. May sacred
+              wisdom flourish, and may all beings everywhere be happy and free. Om Shanti Shanti Shanti."
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         FEATURE GRAPHIC BANNER SHOWCASE
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="container" style="padding: 20px 24px;" aria-label="App feature visual">
+      <div class="app-graphic-banner reveal">
+        <picture>
+          <source srcset="images/google-play-feature-graphic.png" type="image/png" />
+          <img src="images/google-play-feature-graphic.png"
+            alt="My Ashtanga Yoga Practice mobile app feature graphic showcasing primary series postures" width="1024"
+            height="500" loading="lazy" />
+        </picture>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         FINAL CALL TO ACTION BANNER
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="cta-banner" id="download" aria-labelledby="cta-title">
+      <div class="container" style="text-align: center;">
+        <div class="section-label reveal">Start Your Practice Today</div>
+        <h2 id="cta-title"
+          style="font-family: var(--font-sans); font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 600; color: var(--text); margin-bottom: 16px;"
+          class="reveal reveal-delay-1">
+          Elevate Your Ashtanga Yoga Journey
+        </h2>
+        <p style="max-width: 620px; margin: 0 auto 32px; font-size: 1.05rem; color: var(--text-sec); line-height: 1.7;"
+          class="reveal reveal-delay-2">
+          Experience authentic Sanskrit audio, customizable breath guidance, and traditional primary series flows.
+          Available now for iOS and Android.
+        </p>
+
+        <div style="display: flex; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap;"
+          class="reveal reveal-delay-3">
+          <a href="https://apps.apple.com/us/app/my-ashtanga-yoga-practice/id6794335298" class="app-store-badge"
+            id="footer-appstore-btn" target="_blank" rel="noopener noreferrer"
+            aria-label="Download My Ashtanga Yoga Practice on the App Store">
+            <img src="images/app-store-badge.svg" alt="Download on the App Store" width="140" height="46" />
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.ashtangapractice.app" class="play-store-badge"
+            id="footer-playstore-btn" target="_blank" rel="noopener noreferrer"
+            aria-label="Get My Ashtanga Yoga Practice on Google Play">
+            <img src="images/google-play-badge.svg" alt="Get it on Google Play" width="190" height="46"
+              style="height: 46px; width: auto;" />
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" role="contentinfo" aria-label="Footer"
+    style="background: var(--surface); border-top: 1px solid var(--border); padding: 56px 0 32px;">
+    <div class="container">
+      <div
+        style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; margin-bottom: 40px;">
+
+        <!-- Brand Info -->
+        <div style="max-width: 360px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+            <picture>
+              <source srcset="images/r_logo.webp" type="image/webp" />
+              <img src="images/r_logo.png" alt="Rao Ventures logo" width="34" height="34" />
+            </picture>
+            <span style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 600; color: var(--text);">Rao
+              Ventures LLC</span>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-sec); line-height: 1.6;">
+            Empowering individuals through holistic wellness and personal growth, integrating ancient spiritual wisdom
+            with thoughtful modern technology.
+          </p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div style="display: flex; gap: 48px; flex-wrap: wrap;">
+          <div>
+            <div
+              style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-tert); margin-bottom: 14px;">
+              Ashtanga Practice
+            </div>
+            <ul style="display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem; color: var(--text-sec);">
+              <li><a href="#eight-limbs" class="nav-link">The Eight Limbs</a></li>
+              <li><a href="#the-app" class="nav-link">Mobile App</a></li>
+              <li><a href="#features" class="nav-link">Features</a></li>
+              <li><a href="#sequences" class="nav-link">Practice Sequences</a></li>
+              <li><a href="#breath-guide" class="nav-link">Breath Visualizer</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div
+              style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-tert); margin-bottom: 14px;">
+              Legal &amp; Company
+            </div>
+            <ul style="display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem; color: var(--text-sec);">
+              <li><a href="ashtanga-privacy.html" class="nav-link">Privacy Policy</a></li>
+              <li><a href="ashtanga-eula.html" class="nav-link">Terms of Use (EULA)</a></li>
+              <li><a href="https://raoventures.co" target="_blank" rel="noopener noreferrer" class="nav-link">Rao
+                  Ventures</a></li>
+              <li><a href="https://raoventures.co/products.html" target="_blank" rel="noopener noreferrer"
+                  class="nav-link">All Products</a></li>
+              <li><a href="mailto:support@raoventures.co" class="nav-link">support@raoventures.co</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div
+        style="border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: var(--text-tert);">
+        <div>
+          © 2026 Rao Ventures LLC. All rights reserved.
+        </div>
+        <div>
+          ashtangapractice.com • Built with care for authentic yoga sadhana
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
 </html>
