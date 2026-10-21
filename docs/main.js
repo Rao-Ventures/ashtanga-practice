@@ -23,36 +23,67 @@ const navToggle = document.getElementById('nav-toggle');
 const navMobileMenu = document.getElementById('nav-mobile-menu');
 
 if (navToggle && navMobileMenu) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = navMobileMenu.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-    navMobileMenu.setAttribute('aria-hidden', String(!isOpen));
-
-    // Animate hamburger lines
+  const closeMobileMenu = () => {
+    navMobileMenu.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navMobileMenu.setAttribute('aria-hidden', 'true');
     const spans = navToggle.querySelectorAll('span');
-    if (isOpen) {
-      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-      spans[1].style.opacity = '0';
-      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-    } else {
+    if (spans.length >= 3) {
       spans[0].style.transform = '';
       spans[1].style.opacity = '';
       spans[2].style.transform = '';
     }
+  };
+
+  const openMobileMenu = () => {
+    navMobileMenu.classList.add('open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navMobileMenu.setAttribute('aria-hidden', 'false');
+    const spans = navToggle.querySelectorAll('span');
+    if (spans.length >= 3) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    }
+  };
+
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = navMobileMenu.classList.contains('open');
+    if (isOpen) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
   });
 
-  // Close mobile menu when a link is clicked
-  navMobileMenu.querySelectorAll('.nav-mobile-link').forEach(link => {
+  // Close mobile menu when any link or CTA inside it is clicked
+  navMobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      navMobileMenu.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      navMobileMenu.setAttribute('aria-hidden', 'true');
-      const spans = navToggle.querySelectorAll('span');
-      spans[0].style.transform = '';
-      spans[1].style.opacity = '';
-      spans[2].style.transform = '';
+      closeMobileMenu();
     });
   });
+
+  // Close when tapping outside navbar
+  document.addEventListener('click', (e) => {
+    if (navMobileMenu.classList.contains('open') && !navMobileMenu.contains(e.target) && !navToggle.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMobileMenu.classList.contains('open')) {
+      closeMobileMenu();
+    }
+  });
+
+  // Auto-close when resized to desktop breakpoint (> 1024px)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024 && navMobileMenu.classList.contains('open')) {
+      closeMobileMenu();
+    }
+  }, { passive: true });
 }
 
 // ── Scroll reveal using IntersectionObserver ──────────────────────
@@ -66,13 +97,18 @@ const revealObserver = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.12,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.05,
+    rootMargin: '0px 0px -20px 0px'
   }
 );
 
 document.querySelectorAll('.reveal').forEach(el => {
-  revealObserver.observe(el);
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    el.classList.add('visible');
+  } else {
+    revealObserver.observe(el);
+  }
 });
 
 // ── Smooth scroll for anchor links ───────────────────────────────
