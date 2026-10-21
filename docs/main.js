@@ -103,7 +103,7 @@ if (heroOrbs.length > 0) {
   }, { passive: true });
 }
 
-// ── Interactive 5-Breath Visualizer ──────────────────────────────
+// ── Interactive Breath Ring Visualizer ──────────────────────────
 const breathCircle = document.getElementById('breath-circle');
 const breathPhaseText = document.getElementById('breath-phase-text');
 const breathCountText = document.getElementById('breath-count-text');
