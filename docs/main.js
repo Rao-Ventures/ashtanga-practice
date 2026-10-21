@@ -240,3 +240,74 @@ if (chantTabs.length > 0) {
   });
 }
 
+// ── App Screenshots Carousel Controller ──────────────────────────
+const carouselTrack = document.getElementById('app-carousel-track');
+const carouselPrevBtn = document.getElementById('carousel-prev');
+const carouselNextBtn = document.getElementById('carousel-next');
+const carouselDots = document.querySelectorAll('.app-carousel-dot');
+const carouselSlides = document.querySelectorAll('.app-carousel-slide');
+
+if (carouselTrack && carouselSlides.length > 0) {
+  const getSlideScrollAmount = () => {
+    const firstSlide = carouselSlides[0];
+    if (!firstSlide) return 350;
+    const style = window.getComputedStyle(carouselTrack);
+    const gap = parseFloat(style.gap) || 32;
+    return firstSlide.offsetWidth + gap;
+  };
+
+  if (carouselPrevBtn) {
+    carouselPrevBtn.addEventListener('click', () => {
+      carouselTrack.scrollBy({ left: -getSlideScrollAmount(), behavior: 'smooth' });
+    });
+  }
+
+  if (carouselNextBtn) {
+    carouselNextBtn.addEventListener('click', () => {
+      carouselTrack.scrollBy({ left: getSlideScrollAmount(), behavior: 'smooth' });
+    });
+  }
+
+  carouselDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const targetIndex = parseInt(dot.getAttribute('data-index') || '0', 10);
+      const targetSlide = carouselSlides[targetIndex];
+      if (targetSlide) {
+        targetSlide.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    });
+  });
+
+  // Track active slide with IntersectionObserver for accurate dot indicators
+  const slideObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+          const activeIndex = entry.target.getAttribute('data-index');
+          carouselDots.forEach(dot => {
+            const isMatch = dot.getAttribute('data-index') === activeIndex;
+            dot.classList.toggle('active', isMatch);
+            dot.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+          });
+        }
+      });
+    },
+    {
+      root: carouselTrack,
+      threshold: 0.55
+    }
+  );
+
+  carouselSlides.forEach(slide => slideObserver.observe(slide));
+
+  // Keyboard navigation
+  carouselTrack.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      carouselTrack.scrollBy({ left: -getSlideScrollAmount(), behavior: 'smooth' });
+    } else if (e.key === 'ArrowRight') {
+      carouselTrack.scrollBy({ left: getSlideScrollAmount(), behavior: 'smooth' });
+    }
+  });
+}
+
+
