@@ -310,4 +310,23 @@ if (carouselTrack && carouselSlides.length > 0) {
   });
 }
 
+// ── Vexo Analytics: Outbound App Store & Play Store Click Tracking ──
+document.querySelectorAll('a[href*="apple.com"], a[href*="play.google.com"]').forEach(link => {
+  link.addEventListener('click', () => {
+    try {
+      const isApple = link.href.includes('apple.com');
+      const storeName = isApple ? 'App Store' : 'Google Play';
+      if (window.vexo && typeof window.vexo.customEvent === 'function') {
+        window.vexo.customEvent('download_click', {
+          store: storeName,
+          target_url: link.href
+        });
+      }
+    } catch (_) {
+      // Fail silently if analytics script is blocked or unavailable
+    }
+  });
+});
+
+
 
