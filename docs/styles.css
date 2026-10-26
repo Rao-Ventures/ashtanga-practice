@@ -84,6 +84,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -442,9 +443,15 @@ button {
 
 /* ── Scroll Reveal Animations ───────────────────────────────────── */
 .reveal {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+}
+
+/* Only offscreen elements opt into animation after JS observes them. */
+.reveal.reveal-pending {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
 }
 
 .reveal.visible {
@@ -465,7 +472,8 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .reveal,
+  .reveal.reveal-pending {
     opacity: 1;
     transform: none;
     transition: none;
@@ -3584,5 +3592,24 @@ button {
   .app-carousel-track {
     gap: 20px;
     padding: 16px 12px 24px 12px;
+  }
+}
+
+/* Keep the mobile backdrop static and avoid large blurred animation layers. */
+@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+  .hero-bg {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(184, 134, 11, 0.09), transparent 65%),
+      radial-gradient(ellipse at 100% 100%, rgba(13, 148, 136, 0.06), transparent 60%);
+  }
+
+  .hero-orb {
+    display: none;
+  }
+
+  .hero-badge-dot,
+  .scroll-line,
+  .product-tag-live-dot {
+    animation: none;
   }
 }

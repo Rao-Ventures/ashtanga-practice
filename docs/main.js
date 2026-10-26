@@ -87,29 +87,27 @@ if (navToggle && navMobileMenu) {
 }
 
 // ── Scroll reveal using IntersectionObserver ──────────────────────
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.05,
-    rootMargin: '0px 0px -20px 0px'
-  }
-);
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+if ('IntersectionObserver' in window && !reducedMotion.matches) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.classList.remove('reveal-pending');
+          revealObserver.unobserve(entry.target);
+        } else {
+          entry.target.classList.add('reveal-pending');
+        }
+      });
+    },
+    {
+      threshold: 0
+    }
+  );
 
-document.querySelectorAll('.reveal').forEach(el => {
-  const rect = el.getBoundingClientRect();
-  if (rect.top < window.innerHeight && rect.bottom > 0) {
-    el.classList.add('visible');
-  } else {
-    revealObserver.observe(el);
-  }
-});
+  document.querySelectorAll('main .reveal').forEach(el => revealObserver.observe(el));
+}
 
 // ── Smooth scroll for anchor links ───────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -128,7 +126,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ── Subtle parallax on hero orbs ─────────────────────────────────
 const heroOrbs = document.querySelectorAll('.hero-orb');
-if (heroOrbs.length > 0) {
+if (heroOrbs.length > 0 && !reducedMotion.matches && window.matchMedia('(min-width: 769px) and (hover: hover) and (pointer: fine)').matches) {
   window.addEventListener('mousemove', (e) => {
     const x = (e.clientX / window.innerWidth - 0.5) * 2;
     const y = (e.clientY / window.innerHeight - 0.5) * 2;
@@ -152,6 +150,7 @@ if (breathCircle && breathToggleBtn) {
   let isInhale = true;
   let count = 1;
   let timerId = null;
+  let isVisible = false;
 
   const sanskritCounts = [
     { num: 1, name: 'Ekam', devanagari: 'एकम्' },
@@ -187,7 +186,7 @@ if (breathCircle && breathToggleBtn) {
   const startBreath = () => {
     isRunning = true;
     breathToggleBtn.innerHTML = `<span>⏸ Pause Breath</span>`;
-    updateBreathCycle();
+    if (isVisible && !document.hidden && timerId === null) updateBreathCycle();
   };
 
   const pauseBreath = () => {
@@ -211,15 +210,30 @@ if (breathCircle && breathToggleBtn) {
       bpmButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       bpm = parseInt(btn.getAttribute('data-bpm') || '9', 10);
-      if (isRunning) {
+      if (isRunning && isVisible && !document.hidden) {
         clearTimeout(timerId);
         updateBreathCycle();
       }
     });
   });
 
-  // Start breathing animation on load
-  startBreath();
+  // Run the demo only while it is on screen and the tab is active.
+  const syncBreath = () => {
+    clearTimeout(timerId);
+    timerId = null;
+    if (isRunning && isVisible && !document.hidden) startBreath();
+  };
+  if ('IntersectionObserver' in window) {
+    const breathObserver = new IntersectionObserver(entries => {
+      isVisible = entries[0].isIntersecting;
+      syncBreath();
+    });
+    breathObserver.observe(breathCircle.closest('.breath-widget'));
+  } else {
+    isVisible = true;
+    syncBreath();
+  }
+  document.addEventListener('visibilitychange', syncBreath);
 }
 
 // ── Chant Tab Switcher ───────────────────────────────────────────

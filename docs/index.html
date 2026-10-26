@@ -25,19 +25,24 @@
     content="Traditional Ashtanga Practice • Authentic Sanskrit Audio • Vinyasa Counts • Screen-Free Guidance." />
   <link rel="canonical" href="https://ashtangapractice.com" />
 
-  <!-- Typography: Google Fonts Preconnect & Preload -->
+  <!-- Fonts enhance the page without blocking its first render. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap"
-    rel="stylesheet" />
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=optional"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=optional" />
+  </noscript>
 
-  <link rel="preload" as="image" href="images/ashtanga-icon.webp" fetchpriority="high" type="image/webp" />
+  <link rel="preload" as="image" href="images/ashtanga-icon-76.png" fetchpriority="high" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/png" href="images/ashtanga-icon.png" />
+  <link rel="icon" type="image/png" href="images/ashtanga-icon-76.png" />
+  <script src="main.js" defer></script>
 
   <!-- Vexo Web Analytics -->
-  <script src="https://www.vexo.co/analytics.js" defer></script>
+  <script src="https://www.vexo.co/analytics.js" async></script>
 
   <!-- Schema.org JSON-LD Structured Data for SoftwareApplication & FAQPage -->
   <script type="application/ld+json">
@@ -158,11 +163,8 @@
   <nav id="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-inner container">
       <a href="index.html" class="nav-brand" aria-label="My Ashtanga Yoga Practice Home">
-        <picture>
-          <source srcset="images/ashtanga-icon.webp" type="image/webp" />
-          <img src="images/ashtanga-icon.png" alt="My Ashtanga Practice icon" class="nav-logo-img" width="38"
-            height="38" />
-        </picture>
+        <img src="images/ashtanga-icon-76.png" alt="My Ashtanga Practice icon" class="nav-logo-img" width="38"
+          height="38" fetchpriority="high" />
         <span class="nav-brand-name">Ashtanga Practice</span>
       </a>
       <ul class="nav-links" role="list">
@@ -177,7 +179,7 @@
         <li><a href="#the-app" class="nav-cta" id="nav-download-btn">Get App</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
-        aria-controls="nav-links">
+        aria-controls="nav-mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -355,7 +357,7 @@
               <picture>
                 <source srcset="images/ashtanga-icon.webp" type="image/webp" />
                 <img src="images/ashtanga-icon.png" alt="My Ashtanga Practice mobile app icon featuring modern yoga art"
-                  class="product-screenshot" width="512" height="512" loading="eager" fetchpriority="high"
+                  class="product-screenshot" width="512" height="512" loading="lazy" decoding="async"
                   style="max-width: 320px; aspect-ratio: 1/1;" />
               </picture>
               <div class="product-visual-badge product-visual-badge-live">
@@ -1666,7 +1668,6 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
 </body>
 
 </html>
