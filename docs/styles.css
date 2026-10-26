@@ -41,9 +41,9 @@
 /* ── Design Tokens ─────────────────────────────────────────────── */
 :root {
   /* Gold palette (from Svastha) */
-  --gold: #b8860b;
+  --gold: #926b08;
   --gold-light: #d4a843;
-  --gold-dark: #8b6914;
+  --gold-dark: #76580e;
   --gold-pale: #f5ecd0;
   --gold-glow: rgba(184, 134, 11, 0.15);
 
@@ -71,7 +71,7 @@
   /* Text */
   --text: #1c1a14;
   --text-sec: #5c5040;
-  --text-tert: #9e8e78;
+  --text-tert: #756754;
 
   /* Borders */
   --border: #e8dfc8;
