@@ -4,6 +4,26 @@
 
 'use strict';
 
+// Sanskrit fonts are only needed in the pose library and later sections.
+const sanskritSections = document.querySelectorAll('.pose-dir-grid, #vinyasa-breath, #eight-limbs');
+const loadSanskritFonts = () => {
+  const stylesheet = document.createElement('link');
+  stylesheet.rel = 'stylesheet';
+  stylesheet.href = 'fonts/sanskrit.css';
+  document.head.appendChild(stylesheet);
+};
+if ('IntersectionObserver' in window) {
+  const fontObserver = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) {
+      fontObserver.disconnect();
+      loadSanskritFonts();
+    }
+  }, { rootMargin: '600px 0px' });
+  sanskritSections.forEach(section => fontObserver.observe(section));
+} else {
+  loadSanskritFonts();
+}
+
 // ── Navbar scroll effect ──────────────────────────────────────────
 const navbar = document.getElementById('navbar');
 if (navbar) {
@@ -325,17 +345,50 @@ if (carouselTrack && carouselSlides.length > 0) {
 }
 
 // ── Vexo Analytics: Outbound App Store & Play Store Click Tracking ──
+// Keep third-party downloads out of the first render. Early interactions load
+// analytics immediately, and store clicks are queued until its API is ready.
+const pendingDownloadEvents = [];
+let analyticsStarted = false;
+let analyticsTimer;
+const flushDownloadEvents = () => {
+  if (window.vexo && typeof window.vexo.customEvent === 'function') {
+    pendingDownloadEvents.splice(0).forEach(event => {
+      try {
+        window.vexo.customEvent('download_click', event);
+      } catch (_) {
+        // Analytics must never interrupt an outbound link.
+      }
+    });
+  }
+};
+const loadAnalytics = () => {
+  if (analyticsStarted) return;
+  analyticsStarted = true;
+  clearTimeout(analyticsTimer);
+  document.removeEventListener('pointerdown', loadAnalytics);
+  document.removeEventListener('keydown', loadAnalytics);
+  const script = document.createElement('script');
+  script.src = 'https://www.vexo.co/analytics.js';
+  script.async = true;
+  script.addEventListener('load', flushDownloadEvents, { once: true });
+  document.head.appendChild(script);
+};
+document.addEventListener('pointerdown', loadAnalytics, { once: true, passive: true });
+document.addEventListener('keydown', loadAnalytics, { once: true });
+const scheduleAnalytics = () => {
+  if (!analyticsStarted) analyticsTimer = setTimeout(loadAnalytics, 3500);
+};
+if (document.readyState === 'complete') scheduleAnalytics();
+else window.addEventListener('load', scheduleAnalytics, { once: true });
+
 document.querySelectorAll('a[href*="apple.com"], a[href*="play.google.com"]').forEach(link => {
   link.addEventListener('click', () => {
     try {
       const isApple = link.href.includes('apple.com');
       const storeName = isApple ? 'App Store' : 'Google Play';
-      if (window.vexo && typeof window.vexo.customEvent === 'function') {
-        window.vexo.customEvent('download_click', {
-          store: storeName,
-          target_url: link.href
-        });
-      }
+      pendingDownloadEvents.push({ store: storeName, target_url: link.href });
+      loadAnalytics();
+      flushDownloadEvents();
     } catch (_) {
       // Fail silently if analytics script is blocked or unavailable
     }
