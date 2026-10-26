@@ -1,27 +1,36 @@
 /* Self-hosted subsets; licenses are included in fonts/. */
 @font-face {
-  font-family: 'EB Garamond';
+  font-family: "EB Garamond";
   font-style: italic;
   font-weight: 400 600;
   font-display: optional;
-  src: url('fonts/eb-garamond-italic-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("fonts/eb-garamond-italic-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'EB Garamond';
+  font-family: "EB Garamond";
   font-style: normal;
   font-weight: 400 700;
   font-display: optional;
-  src: url('fonts/eb-garamond-normal-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("fonts/eb-garamond-normal-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 300 700;
   font-display: optional;
-  src: url('fonts/inter-normal-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("fonts/inter-normal-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -32,52 +41,59 @@
 /* ── Design Tokens ─────────────────────────────────────────────── */
 :root {
   /* Gold palette (from Svastha) */
-  --gold: #B8860B;
-  --gold-light: #D4A843;
-  --gold-dark: #8B6914;
-  --gold-pale: #F5ECD0;
+  --gold: #b8860b;
+  --gold-light: #d4a843;
+  --gold-dark: #8b6914;
+  --gold-pale: #f5ecd0;
   --gold-glow: rgba(184, 134, 11, 0.15);
 
   /* Teal palette (from Flow Into Stillness) */
-  --teal: #0D9488;
-  --teal-light: #14B8A6;
-  --teal-dark: #0F766E;
-  --teal-pale: #F0FDFB;
+  --teal: #0d9488;
+  --teal-light: #14b8a6;
+  --teal-dark: #0f766e;
+  --teal-pale: #f0fdfb;
   --teal-glow: rgba(13, 148, 136, 0.12);
 
   /* Amber/Terracotta palette (from My Ashtanga Practice) */
-  --amber: #D97706;
-  --amber-light: #F59E0B;
-  --amber-dark: #B45309;
-  --amber-pale: #FEF3C7;
+  --amber: #d97706;
+  --amber-light: #f59e0b;
+  --amber-dark: #b45309;
+  --amber-pale: #fef3c7;
   --amber-glow: rgba(217, 119, 6, 0.15);
 
   /* Warm neutrals */
-  --cream: #FDFBF7;
-  --cream-dark: #F5EFE2;
-  --cream-mid: #EDE4D0;
-  --surface: #FFFFFF;
-  --surface-warm: #FDF8F0;
+  --cream: #fdfbf7;
+  --cream-dark: #f5efe2;
+  --cream-mid: #ede4d0;
+  --surface: #ffffff;
+  --surface-warm: #fdf8f0;
 
   /* Text */
-  --text: #1C1A14;
-  --text-sec: #5C5040;
-  --text-tert: #9E8E78;
+  --text: #1c1a14;
+  --text-sec: #5c5040;
+  --text-tert: #9e8e78;
 
   /* Borders */
-  --border: #E8DFC8;
-  --border-hover: #D4C4A0;
+  --border: #e8dfc8;
+  --border-hover: #d4c4a0;
 
   /* Gradients */
   --grad-gold: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
   --grad-teal: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
-  --grad-amber: linear-gradient(135deg, var(--amber) 0%, var(--amber-light) 100%);
-  --grad-warm: linear-gradient(135deg, #B8860B 0%, #D4A843 50%, #0D9488 100%);
+  --grad-amber: linear-gradient(
+    135deg,
+    var(--amber) 0%,
+    var(--amber-light) 100%
+  );
+  --grad-warm: linear-gradient(135deg, #b8860b 0%, #d4a843 50%, #0d9488 100%);
 
   /* Shadows */
-  --shadow-sm: 0 1px 4px rgba(100, 80, 40, 0.08), 0 1px 2px rgba(100, 80, 40, 0.05);
-  --shadow-md: 0 4px 20px rgba(100, 80, 40, 0.10), 0 2px 8px rgba(100, 80, 40, 0.06);
-  --shadow-lg: 0 8px 40px rgba(100, 80, 40, 0.14), 0 4px 16px rgba(100, 80, 40, 0.08);
+  --shadow-sm:
+    0 1px 4px rgba(100, 80, 40, 0.08), 0 1px 2px rgba(100, 80, 40, 0.05);
+  --shadow-md:
+    0 4px 20px rgba(100, 80, 40, 0.1), 0 2px 8px rgba(100, 80, 40, 0.06);
+  --shadow-lg:
+    0 8px 40px rgba(100, 80, 40, 0.14), 0 4px 16px rgba(100, 80, 40, 0.08);
   --shadow-gold: 0 4px 28px rgba(184, 134, 11, 0.28);
   --shadow-teal: 0 4px 28px rgba(13, 148, 136, 0.28);
   --shadow-amber: 0 4px 28px rgba(217, 119, 6, 0.28);
@@ -90,8 +106,8 @@
   --radius-full: 9999px;
 
   /* Typography */
-  --font-sans: 'EB Garamond', Georgia, serif;
-  --font-ui: 'Inter', system-ui, sans-serif;
+  --font-sans: "EB Garamond", Georgia, serif;
+  --font-ui: "Inter", system-ui, sans-serif;
 
   /* Motion */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
@@ -177,7 +193,7 @@ button {
 }
 
 .section-label::before {
-  content: '';
+  content: "";
   display: block;
   width: 20px;
   height: 2px;
@@ -293,7 +309,9 @@ button {
 .play-store-badge {
   display: inline-flex;
   align-items: center;
-  transition: transform var(--dur) var(--ease), filter var(--dur) var(--ease);
+  transition:
+    transform var(--dur) var(--ease),
+    filter var(--dur) var(--ease);
 }
 
 .app-store-badge:hover,
@@ -471,7 +489,9 @@ button {
 .reveal {
   opacity: 1;
   transform: none;
-  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+  transition:
+    opacity 0.65s var(--ease),
+    transform 0.65s var(--ease);
 }
 
 /* Only offscreen elements opt into animation after JS observes them. */
@@ -523,7 +543,11 @@ button {
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease), backdrop-filter var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+  transition:
+    background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    backdrop-filter var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
 }
 
 #navbar.scrolled {
@@ -599,7 +623,9 @@ button {
   color: var(--text-sec);
   padding: 7px 14px;
   border-radius: var(--radius-full);
-  transition: color var(--dur), background var(--dur);
+  transition:
+    color var(--dur),
+    background var(--dur);
   white-space: nowrap;
 }
 
@@ -618,7 +644,10 @@ button {
   padding: 8px 18px;
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-gold);
-  transition: background var(--dur), transform var(--dur), box-shadow var(--dur);
+  transition:
+    background var(--dur),
+    transform var(--dur),
+    box-shadow var(--dur);
   margin-left: 6px;
   white-space: nowrap;
   flex-shrink: 0;
@@ -664,7 +693,9 @@ button {
   background: transparent;
   border: 1px solid var(--border);
   cursor: pointer;
-  transition: background var(--dur), border-color var(--dur);
+  transition:
+    background var(--dur),
+    border-color var(--dur);
   margin-left: auto;
 }
 
@@ -705,7 +736,9 @@ button {
   color: var(--text);
   padding: 13px 0;
   border-bottom: 1px solid var(--border);
-  transition: color var(--dur), padding-left var(--dur);
+  transition:
+    color var(--dur),
+    padding-left var(--dur);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -732,7 +765,9 @@ button {
   border-radius: var(--radius-full);
   margin-top: 14px;
   box-shadow: var(--shadow-gold);
-  transition: background var(--dur), transform var(--dur);
+  transition:
+    background var(--dur),
+    transform var(--dur);
 }
 
 .nav-mobile-cta:hover {
@@ -770,7 +805,11 @@ button {
 .hero-orb-1 {
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(184, 134, 11, 0.14) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(184, 134, 11, 0.14) 0%,
+    transparent 70%
+  );
   top: -220px;
   left: 50%;
   transform: translateX(-50%);
@@ -780,7 +819,11 @@ button {
 .hero-orb-2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(13, 148, 136, 0.10) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(13, 148, 136, 0.1) 0%,
+    transparent 70%
+  );
   bottom: -100px;
   right: -150px;
   animation: float-orb-2 12s ease-in-out infinite;
@@ -789,14 +832,17 @@ button {
 .hero-orb-3 {
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, rgba(212, 168, 67, 0.12) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(212, 168, 67, 0.12) 0%,
+    transparent 70%
+  );
   top: 40%;
   left: -100px;
   animation: float-orb-3 9s ease-in-out infinite;
 }
 
 @keyframes float-orb {
-
   0%,
   100% {
     transform: translateX(-50%) translateY(0);
@@ -808,7 +854,6 @@ button {
 }
 
 @keyframes float-orb-2 {
-
   0%,
   100% {
     transform: translateY(0);
@@ -820,7 +865,6 @@ button {
 }
 
 @keyframes float-orb-3 {
-
   0%,
   100% {
     transform: translateY(0);
@@ -835,9 +879,17 @@ button {
 .hero-grid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(184, 134, 11, 0.18) 1px, transparent 1px);
+  background-image: radial-gradient(
+    circle,
+    rgba(184, 134, 11, 0.18) 1px,
+    transparent 1px
+  );
   background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 65%);
+  mask-image: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    black 0%,
+    transparent 65%
+  );
 }
 
 .hero-content {
@@ -873,7 +925,6 @@ button {
 }
 
 @keyframes pulse-dot {
-
   0%,
   100% {
     opacity: 1;
@@ -1140,7 +1191,10 @@ button {
   background: var(--surface);
   border: 1px solid var(--border);
   overflow: hidden;
-  transition: transform var(--dur) var(--ease), border-color var(--dur), box-shadow var(--dur);
+  transition:
+    transform var(--dur) var(--ease),
+    border-color var(--dur),
+    box-shadow var(--dur);
 }
 
 .product-card:hover {
@@ -1165,15 +1219,27 @@ button {
 }
 
 .product-card-glow-svastha {
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(184, 134, 11, 0.10) 0%, transparent 70%);
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    rgba(184, 134, 11, 0.1) 0%,
+    transparent 70%
+  );
 }
 
 .product-card-glow-flow {
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(13, 148, 136, 0.10) 0%, transparent 70%);
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    rgba(13, 148, 136, 0.1) 0%,
+    transparent 70%
+  );
 }
 
 .product-card-glow-ashtanga {
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(217, 119, 6, 0.12) 0%, transparent 70%);
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    rgba(217, 119, 6, 0.12) 0%,
+    transparent 70%
+  );
 }
 
 .product-card-inner {
@@ -1316,7 +1382,9 @@ button {
   color: var(--gold);
   margin-top: 8px;
   padding: 10px 0;
-  transition: gap var(--dur), color var(--dur);
+  transition:
+    gap var(--dur),
+    color var(--dur);
   border-top: 1px solid var(--border);
 }
 
@@ -1378,7 +1446,11 @@ button {
   position: absolute;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(184, 134, 11, 0.08) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(184, 134, 11, 0.08) 0%,
+    transparent 70%
+  );
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1436,7 +1508,10 @@ button {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   text-align: center;
-  transition: border-color var(--dur), transform var(--dur) var(--ease), box-shadow var(--dur);
+  transition:
+    border-color var(--dur),
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur);
 }
 
 .pillar:hover {
@@ -1749,7 +1824,7 @@ button {
   direction: rtl;
 }
 
-.product-detail-grid-reverse>* {
+.product-detail-grid-reverse > * {
   direction: ltr;
 }
 
@@ -1767,7 +1842,11 @@ button {
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(184, 134, 11, 0.2) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(184, 134, 11, 0.2) 0%,
+    transparent 70%
+  );
   filter: blur(55px);
   top: 50%;
   left: 50%;
@@ -1787,7 +1866,9 @@ button {
     var(--shadow-lg),
     0 0 0 4px rgba(184, 134, 11, 0.08);
   display: block;
-  transition: transform var(--dur) var(--ease), box-shadow var(--dur);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur);
 }
 
 .product-screenshot-wrapper:hover .product-screenshot {
@@ -1806,11 +1887,19 @@ button {
 }
 
 .product-screenshot-glow-flow {
-  background: radial-gradient(circle, rgba(13, 148, 136, 0.22) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(13, 148, 136, 0.22) 0%,
+    transparent 70%
+  );
 }
 
 .product-screenshot-glow-ashtanga {
-  background: radial-gradient(circle, rgba(217, 119, 6, 0.22) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(217, 119, 6, 0.22) 0%,
+    transparent 70%
+  );
 }
 
 .product-screenshot-flow .product-screenshot {
@@ -1863,7 +1952,11 @@ button {
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(184, 134, 11, 0.18) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(184, 134, 11, 0.18) 0%,
+    transparent 70%
+  );
   filter: blur(50px);
   top: 50%;
   left: 50%;
@@ -1871,7 +1964,11 @@ button {
 }
 
 .product-visual-glow-flow {
-  background: radial-gradient(circle, rgba(13, 148, 136, 0.18) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(13, 148, 136, 0.18) 0%,
+    transparent 70%
+  );
 }
 
 .product-visual-card {
@@ -1900,15 +1997,15 @@ button {
 }
 
 .pvc-dot-1 {
-  background: #FF5F57;
+  background: #ff5f57;
 }
 
 .pvc-dot-2 {
-  background: #FEBC2E;
+  background: #febc2e;
 }
 
 .pvc-dot-3 {
-  background: #28C840;
+  background: #28c840;
 }
 
 .pvc-content {
@@ -2124,6 +2221,7 @@ button {
 
 .product-detail-cta {
   display: flex;
+  padding-top: 1.5rem;
   gap: 16px;
   flex-wrap: wrap;
 }
@@ -2135,7 +2233,12 @@ button {
 
 .product-divider-line {
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--border), transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border),
+    transparent
+  );
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -2272,7 +2375,6 @@ button {
     display: block;
     padding: calc(72px + 64px) 0 64px;
   }
-
 
   .hero-scroll-indicator {
     display: none;
@@ -2565,7 +2667,11 @@ button {
 
 /* Sutra highlight banner */
 .sutra-banner {
-  background: linear-gradient(135deg, rgba(254, 243, 199, 0.65) 0%, rgba(253, 251, 247, 0.95) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(254, 243, 199, 0.65) 0%,
+    rgba(253, 251, 247, 0.95) 100%
+  );
   border: 1px solid rgba(217, 119, 6, 0.25);
   border-radius: var(--radius-lg);
   padding: 36px 40px;
@@ -2576,20 +2682,20 @@ button {
 }
 
 .sutra-banner::before {
-  content: 'ॐ';
+  content: "ॐ";
   position: absolute;
   right: 24px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 8rem;
   color: rgba(217, 119, 6, 0.06);
-  font-family: 'Noto Serif Devanagari', serif;
+  font-family: "Noto Serif Devanagari", serif;
   pointer-events: none;
   line-height: 1;
 }
 
 .sutra-sanskrit {
-  font-family: 'Noto Serif Devanagari', 'EB Garamond', serif;
+  font-family: "Noto Serif Devanagari", "EB Garamond", serif;
   font-size: clamp(1.15rem, 2.2vw, 1.45rem);
   color: var(--amber-dark);
   font-weight: 600;
@@ -2639,7 +2745,10 @@ button {
   border-radius: var(--radius-lg);
   padding: 30px 26px;
   position: relative;
-  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
   display: flex;
   flex-direction: column;
 }
@@ -2673,7 +2782,7 @@ button {
 }
 
 .limb-devanagari {
-  font-family: 'Noto Serif Devanagari', 'EB Garamond', serif;
+  font-family: "Noto Serif Devanagari", "EB Garamond", serif;
   font-size: 1.6rem;
   color: var(--amber-dark);
   font-weight: 600;
@@ -2746,7 +2855,9 @@ button {
   border-radius: var(--radius-md);
   padding: 24px 20px;
   text-align: left;
-  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  transition:
+    transform var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
 }
 
 .tristana-card:hover {
@@ -2788,7 +2899,9 @@ button {
   padding: 26px 22px;
   display: flex;
   flex-direction: column;
-  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
 }
 
 .sequence-card:hover {
@@ -2834,7 +2947,7 @@ button {
 
 /* Interactive Breath Visualizer */
 .breath-widget {
-  background: linear-gradient(135deg, #FFFDF8 0%, #FEF9EE 100%);
+  background: linear-gradient(135deg, #fffdf8 0%, #fef9ee 100%);
   border: 1px solid rgba(217, 119, 6, 0.25);
   border-radius: var(--radius-xl);
   padding: 40px 32px;
@@ -2866,8 +2979,14 @@ button {
 .breath-circle {
   width: 140px;
   height: 140px;
+  padding: 16px;
+  text-align: center;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.85) 0%, rgba(217, 119, 6, 0.95) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(245, 158, 11, 0.85) 0%,
+    rgba(217, 119, 6, 0.95) 100%
+  );
   box-shadow: 0 0 35px rgba(217, 119, 6, 0.35);
   display: flex;
   flex-direction: column;
@@ -2887,15 +3006,18 @@ button {
 }
 
 .breath-phase-text {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: #fff;
 }
 
 .breath-count-text {
-  font-family: 'Noto Serif Devanagari', serif;
-  font-size: 0.95rem;
+  font-family: "Noto Serif Devanagari", serif;
+  font-size: 0.7rem;
+  line-height: 1.4;
+  max-width: 100%;
+  overflow-wrap: break-word;
   opacity: 0.9;
   margin-top: 2px;
 }
@@ -2994,7 +3116,7 @@ button {
 }
 
 .chant-verse-devanagari {
-  font-family: 'Noto Serif Devanagari', 'EB Garamond', serif;
+  font-family: "Noto Serif Devanagari", "EB Garamond", serif;
   font-size: 1.25rem;
   line-height: 1.8;
   color: var(--text);
@@ -3035,7 +3157,6 @@ button {
   object-fit: cover;
   display: block;
 }
-
 
 /* ═══════════════════════════════════════════════════════════════
    SEO LANDING PAGE ENHANCEMENTS
@@ -3096,7 +3217,7 @@ button {
 }
 
 .audience-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -3202,7 +3323,7 @@ button {
 }
 
 .comparison-table td.col-app {
-  background: #FFFDF9;
+  background: #fffdf9;
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
   font-weight: 600;
@@ -3217,7 +3338,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #15803D;
+  color: #15803d;
   font-weight: 600;
 }
 
@@ -3263,7 +3384,7 @@ button {
 }
 
 .pose-dir-devanagari {
-  font-family: 'Noto Serif Devanagari', serif;
+  font-family: "Noto Serif Devanagari", serif;
   font-size: 0.95rem;
   color: var(--amber-dark);
   margin-bottom: 6px;
@@ -3375,7 +3496,7 @@ button {
 }
 
 .faq-question::after {
-  content: '+';
+  content: "+";
   font-family: var(--font-ui);
   font-size: 1.4rem;
   font-weight: 400;
@@ -3462,14 +3583,16 @@ button {
     0 22px 50px -10px rgba(13, 19, 31, 0.38),
     0 0 0 1px rgba(255, 255, 255, 0.12) inset,
     0 0 35px rgba(217, 119, 6, 0.12);
-  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s ease;
 }
 
 .phone-mockup-inner {
   border-radius: 38px;
   overflow: hidden;
   aspect-ratio: 390 / 844;
-  background: #0B1120;
+  background: #0b1120;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
@@ -3550,7 +3673,7 @@ button {
 
 .app-carousel-arrow:hover {
   background: var(--amber);
-  color: #FFFFFF;
+  color: #ffffff;
   border-color: var(--amber);
   box-shadow: var(--shadow-amber);
   transform: translateY(-50%) scale(1.08);
@@ -3585,7 +3708,9 @@ button {
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s ease;
+  transition:
+    width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background-color 0.3s ease;
 }
 
 .app-carousel-dot.active {
@@ -3633,8 +3758,16 @@ button {
 @media (max-width: 768px), (prefers-reduced-motion: reduce) {
   .hero-bg {
     background:
-      radial-gradient(ellipse at 50% 0%, rgba(184, 134, 11, 0.09), transparent 65%),
-      radial-gradient(ellipse at 100% 100%, rgba(13, 148, 136, 0.06), transparent 60%);
+      radial-gradient(
+        ellipse at 50% 0%,
+        rgba(184, 134, 11, 0.09),
+        transparent 65%
+      ),
+      radial-gradient(
+        ellipse at 100% 100%,
+        rgba(13, 148, 136, 0.06),
+        transparent 60%
+      );
   }
 
   .hero-orb {
