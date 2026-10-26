@@ -509,6 +509,14 @@ button {
 /* ════════════════════════════════════════════════════════════════
    NAVIGATION
    ════════════════════════════════════════════════════════════════ */
+.nav-scroll-marker {
+  position: absolute;
+  top: 20px;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
 #navbar {
   position: fixed;
   top: 0;

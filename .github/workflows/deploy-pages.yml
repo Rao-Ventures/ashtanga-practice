@@ -18,7 +18,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're deploying static docs
+  # Deploy the static site directly from docs; no build step is needed.
   deploy:
     environment:
       name: github-pages

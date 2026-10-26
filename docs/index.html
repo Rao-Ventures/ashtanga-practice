@@ -28,9 +28,9 @@
   <!-- Core fonts are self-hosted in styles.css. Load Sanskrit faces near their sections. -->
   <noscript><link rel="stylesheet" href="fonts/sanskrit.css" /></noscript>
 
-  <link rel="preload" as="image" href="images/ashtanga-icon-76.png" fetchpriority="high" type="image/png" />
+  <link rel="preload" as="image" href="images/ashtanga-icon-76.webp" fetchpriority="high" type="image/webp" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/png" href="images/ashtanga-icon-76.png" />
+  <link rel="icon" type="image/webp" href="images/ashtanga-icon-76.webp" />
   <script src="main.js" defer></script>
 
   <!-- Schema.org JSON-LD Structured Data for SoftwareApplication & FAQPage -->
@@ -148,11 +148,12 @@
 
 <body>
 
+  <div class="nav-scroll-marker" aria-hidden="true"></div>
   <!-- Navigation -->
   <nav id="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-inner container">
       <a href="index.html" class="nav-brand" aria-label="My Ashtanga Yoga Practice Home">
-        <img src="images/ashtanga-icon-76.png" alt="My Ashtanga Practice icon" class="nav-logo-img" width="38"
+        <img src="images/ashtanga-icon-76.webp" alt="My Ashtanga Practice icon" class="nav-logo-img" width="38"
           height="38" fetchpriority="high" />
         <span class="nav-brand-name">Ashtanga Practice</span>
       </a>
@@ -344,7 +345,8 @@
             <div class="product-screenshot-wrapper product-screenshot-ashtanga">
               <div class="product-screenshot-glow product-screenshot-glow-ashtanga"></div>
               <picture>
-                <source srcset="images/ashtanga-icon.webp" type="image/webp" />
+                <source srcset="images/ashtanga-icon-320.webp 320w, images/ashtanga-icon-640.webp 640w, images/ashtanga-icon.webp 1024w"
+                  sizes="320px" type="image/webp" />
                 <img src="images/ashtanga-icon.png" alt="My Ashtanga Practice mobile app icon featuring modern yoga art"
                   class="product-screenshot" width="512" height="512" loading="lazy" decoding="async"
                   style="max-width: 320px; aspect-ratio: 1/1;" />
@@ -1575,8 +1577,8 @@
         <div style="max-width: 360px;">
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
             <picture>
-              <source srcset="images/r_logo.webp" type="image/webp" />
-              <img src="images/r_logo.png" alt="Rao Ventures logo" width="34" height="34" />
+              <source srcset="images/r-logo-68.webp" type="image/webp" />
+              <img src="images/r_logo.png" alt="Rao Ventures logo" width="34" height="34" loading="lazy" decoding="async" />
             </picture>
             <span style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 600; color: var(--text);">Rao
               Ventures LLC</span>

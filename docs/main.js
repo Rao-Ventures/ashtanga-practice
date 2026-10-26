@@ -26,7 +26,13 @@ if ('IntersectionObserver' in window) {
 
 // ── Navbar scroll effect ──────────────────────────────────────────
 const navbar = document.getElementById('navbar');
-if (navbar) {
+const navScrollMarker = document.querySelector('.nav-scroll-marker');
+if (navbar && navScrollMarker && 'IntersectionObserver' in window) {
+  const navObserver = new IntersectionObserver(([entry]) => {
+    navbar.classList.toggle('scrolled', entry.boundingClientRect.top < 0);
+  });
+  navObserver.observe(navScrollMarker);
+} else if (navbar) {
   const onScroll = () => {
     if (window.scrollY > 20) {
       navbar.classList.add('scrolled');
