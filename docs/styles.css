@@ -965,7 +965,7 @@ button {
   font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--text-sec);
   max-width: 580px;
-  margin: 0 auto 52px;
+  margin: 0 auto 32px;
   line-height: 1.8;
 }
 
@@ -2565,7 +2565,6 @@ button {
 
   .hero-badges-row {
     gap: 10px;
-    margin-top: 18px;
   }
 
   .product-screenshot {
@@ -3167,9 +3166,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: clamp(10px, 2vw, 16px);
   flex-wrap: wrap;
-  margin-top: 24px;
+  margin-top: 0;
 }
 
 .hero-usp-pills {
@@ -3181,7 +3180,7 @@ button {
   font-size: 0.85rem;
   color: var(--text-sec);
   font-weight: 500;
-  margin-top: 14px;
+  margin-top: 24px;
 }
 
 .hero-usp-pill-item {
