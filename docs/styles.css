@@ -167,7 +167,7 @@ button {
 }
 
 .section-pad {
-  padding: 100px 0;
+  padding: 48px 0 100px;
 }
 
 .text-center {
@@ -1802,7 +1802,7 @@ button {
 }
 
 .product-detail {
-  padding: 48px 0;
+  padding: 32px 0 48px;
 }
 
 .product-detail:first-child {
@@ -2245,7 +2245,7 @@ button {
    CTA BANNER (Products Page)
    ════════════════════════════════════════════════════════════════ */
 .cta-banner {
-  padding: 80px 0;
+  padding: 48px 0 80px;
   background: var(--surface-warm);
   border-top: 1px solid var(--border);
 }
@@ -2363,7 +2363,7 @@ button {
 /* Tablet portrait & below (<= 768px) */
 @media (max-width: 768px) {
   .section-pad {
-    padding: 64px 0;
+    padding: 32px 0 64px;
   }
 
   .desktop-only {
@@ -2450,7 +2450,7 @@ button {
   }
 
   .product-detail {
-    padding: 48px 0;
+    padding: 32px 0 48px;
   }
 
   .sutra-banner {
@@ -2576,7 +2576,7 @@ button {
   }
 
   .cta-banner {
-    padding: 56px 0;
+    padding: 32px 0 56px;
   }
 
   .cta-actions {
